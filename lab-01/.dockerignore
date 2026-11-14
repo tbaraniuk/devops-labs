@@ -1,0 +1,16 @@
+.venv/
+
+.env.example
+.env
+
+partner/mappings/
+
+ASSIGNMENT.md
+
+data/
+.mypy_cache/
+__pycache__/
+.git/
+
+Dockerfile
+compose.yaml
