@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 
-RUN useradd --create-home app
+RUN useradd --create-home app && mkdir /data && chown app /data
 
 WORKDIR /app
 COPY requirements.txt .
