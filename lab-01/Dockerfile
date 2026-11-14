@@ -4,12 +4,14 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN /venv/bin/pip install --no-cache-dir -r requirements.txt
 
 
 FROM python:3.12-slim
 
 RUN useradd --create-home app && mkdir /data && chown app /data
+
+COPY --from=builder /venv /venv
 
 WORKDIR /app
 
@@ -19,4 +21,4 @@ USER app
 
 EXPOSE 8080
 
-CMD [ "python", "app.py" ]
+CMD [ "/venv/bin/python", "app.py" ]
