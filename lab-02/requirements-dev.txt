@@ -1,2 +1,0 @@
-pytest==9.2.0
-responses==0.26.3
